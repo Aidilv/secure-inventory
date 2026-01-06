@@ -1,0 +1,38 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Secure Inventory</title>
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+</head>
+
+<body>
+
+<header>
+    <h2>📦 Secure Inventory</h2>
+
+    {% if user.is_authenticated %}
+    <nav>
+        <a href="/products/">Products</a>
+        <a href="/profile/">Profile</a>
+        {% if user.is_staff %}
+            <a href="/audit/">Audit Log</a>
+        {% endif %}
+        <form method="post" action="/logout/">
+            {% csrf_token %}
+            <button type="submit">Logout</button>
+        </form>
+    </nav>
+    {% endif %}
+</header>
+
+<main>
+    {% block content %}{% endblock %}
+</main>
+
+<footer>
+    Secure Software Development Project
+</footer>
+
+</body>
+</html>

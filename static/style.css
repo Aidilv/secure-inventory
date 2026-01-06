@@ -1,0 +1,163 @@
+/* ===== Reset & Base ===== */
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0;
+    background-color: #f4f6f8;
+    color: #333;
+}
+
+a {
+    text-decoration: none;
+    color: #2563eb;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+.container {
+    max-width: 1000px;
+    margin: auto;
+    padding: 20px;
+}
+
+/* ===== Navbar ===== */
+header {
+    background-color: #1f2937;
+    color: white;
+    padding: 15px 20px;
+}
+
+header h2 {
+    margin: 0;
+    display: inline-block;
+}
+
+header nav {
+    margin-top: 10px;
+}
+
+header nav a {
+    color: white;
+    margin-right: 15px;
+    font-weight: bold;
+}
+
+header form {
+    display: inline;
+}
+
+header button {
+    background-color: #ef4444;
+    border: none;
+    color: white;
+    padding: 6px 12px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+header button:hover {
+    background-color: #dc2626;
+}
+
+/* ===== Main Content ===== */
+main {
+    background-color: white;
+    margin: 30px auto;
+    padding: 25px;
+    border-radius: 6px;
+    max-width: 1000px;
+}
+
+/* ===== Headings ===== */
+h1 {
+    margin-top: 0;
+    border-bottom: 2px solid #e5e7eb;
+    padding-bottom: 10px;
+}
+
+/* ===== Table ===== */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 15px;
+}
+
+table th {
+    background-color: #f1f5f9;
+    text-align: left;
+    padding: 10px;
+}
+
+table td {
+    padding: 10px;
+    border-bottom: 1px solid #e5e7eb;
+}
+
+table tr:hover {
+    background-color: #f9fafb;
+}
+
+/* ===== Buttons ===== */
+.btn {
+    padding: 6px 12px;
+    border-radius: 4px;
+    color: white;
+    font-size: 14px;
+}
+
+.btn-add {
+    background-color: #22c55e;
+}
+
+.btn-edit {
+    background-color: #3b82f6;
+}
+
+.btn-delete {
+    background-color: #ef4444;
+}
+
+.btn:hover {
+    opacity: 0.85;
+}
+
+/* ===== Forms ===== */
+form input {
+    padding: 6px;
+    margin-bottom: 10px;
+    width: 250px;
+}
+
+form label {
+    font-weight: bold;
+}
+
+/* ===== Footer ===== */
+footer {
+    text-align: center;
+    color: #777;
+    margin-bottom: 30px;
+}
+
+/* ===== Product Form ===== */
+.product-form {
+    max-width: 500px;
+    margin-top: 20px;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 8px;
+    box-sizing: border-box;
+}

@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+{% block content %}
+<h1>Products</h1>
+{% if user.is_staff %}
+<a href="/products/add/">+ Add Product</a>
+{% endif %}
+<table>
+<tr><th>Name</th><th>Qty</th><th>Price</th>{% if user.is_staff %}<th>Action</th>{% endif %}</tr>
+{% for p in products %}
+<tr>
+<td>{{ p.name }}</td><td>{{ p.quantity }}</td><td>{{ p.price }}</td>
+{% if user.is_staff %}
+<td>
+<a href="/products/edit/{{ p.id }}/">Edit</a>
+<a href="/products/delete/{{ p.id }}/">Delete</a>
+</td>
+{% endif %}
+</tr>
+{% endfor %}
+</table>
+{% endblock %}
