@@ -16,44 +16,88 @@ It implements authentication, role-based access control, audit logging, and mult
 
 ---
 
-##  Features
+##  Installation Steps
 
-###  Authentication & Authorization
-- User login and logout
-- User registration for normal users
-- Role-based access control:
-  - **Admin**: Full access (CRUD + Audit Log)
-  - **Normal User**: View-only access
+Follow the steps below to set up the project locally.
 
-###  Inventory Management
-- Add, edit, delete products (Admin only)
-- View product list
-- Search products by name
-- Pagination for product listing
+### Step 1: Clone the Repository
+```bash
+git clone https://github.com/Aidilv/secure-inventory.git
+cd secure-inventory
+```
+### Step 2: Create Virtual Environment
+```bash
+python -m venv venv
+venv\Scripts\activate
+```
 
-###  Audit Logging
-- Logs all critical actions:
-  - Product added
-  - Product edited
-  - Product deleted
-- Records:
-  - Username
-  - Action performed
-  - Product name
-  - Timestamp
-- Audit log accessible **only by admin**
+### Step 3: Install Dependencies
+```bash
+pip install -r requirements.txt
+```
 
-###  Security Enhancements
-- CSRF protection on all forms
-- Input validation (quantity, price, password)
-- Django ORM to prevent SQL Injection
+---
+
+### 3. Security Features Summary
+
+The Secure Inventory System includes the following security features:
+
+- Secure authentication using Django authentication framework
+- Role-Based Access Control (RBAC) for admin and normal users
+- Server-side input validation for all critical inputs
+- Protection against SQL Injection using Django ORM
+- CSRF protection enabled on all forms
 - Automatic password hashing
-- Secure session management
+- Audit logging for administrative actions
+- Django template auto-escaping to prevent XSS attacks
 
-###  User Interface Improvements
-- Clean and professional navigation header
-- Auto-dismiss user feedback messages
-- Confirmation dialog for delete actions
-- Responsive and readable layout
+---
+
+### 4. How to Run the Application
+
+### Step 1: Apply Database Migrations
+```bash
+python manage.py migrate
+```
+
+### Step 2: Create Admin User
+```bash
+python manage.py createsuperuser
+```
+
+### Step 3: Start the Server
+```bash
+python manage.py runserver
+```
+
+### Step 4: Open in Browser
+```bash
+http://127.0.0.1:8000/login/
+```
+
+---
+
+### 5. Dependencies
+
+The main dependencies used in this project include:
+- Python 3.x
+- Django
+- SQLite3 (default Django database)
+All required packages are listed in the requirements.txt file.
+
+---
+
+### 6. Screenshots of the System
+
+Screenshots demonstrating system functionality and security testing are included in the project report, including:
+
+- Login page
+- Admin inventory management
+- Normal user access control
+- Input validation errors
+- Audit log page
+- OWASP ZAP dynamic testing results
+
+
 
 
