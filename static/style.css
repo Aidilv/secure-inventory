@@ -1,10 +1,70 @@
-/* ===== Reset & Base ===== */
 body {
     font-family: Arial, Helvetica, sans-serif;
     margin: 0;
     background-color: #f4f6f8;
     color: #333;
 }
+
+main {
+    background-color: white;
+    margin: 30px auto;
+    padding: 25px;
+    border-radius: 6px;
+    max-width: 1000px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+td, th {
+    padding: 8px;
+    border-bottom: 1px solid #ddd;
+}
+
+/* ===== Messages ===== */
+.alert {
+    padding: 10px;
+    margin-bottom: 15px;
+    border-radius: 4px;
+}
+
+.alert.success {
+    background-color: #d1fae5;
+    color: #065f46;
+}
+
+.alert.error {
+    background-color: #fee2e2;
+    color: #991b1b;
+}
+
+
+/* ===== Messages ===== */
+#messages-container {
+    margin-bottom: 20px;
+}
+
+.alert {
+    padding: 12px 15px;
+    border-radius: 5px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.alert.success {
+    background-color: #e6fffa;
+    color: #065f46;
+    border-left: 5px solid #10b981;
+}
+
+.alert.error {
+    background-color: #fee2e2;
+    color: #991b1b;
+    border-left: 5px solid #ef4444;
+}
+
 
 a {
     text-decoration: none;
@@ -60,14 +120,6 @@ header button:hover {
     background-color: #dc2626;
 }
 
-/* ===== Main Content ===== */
-main {
-    background-color: white;
-    margin: 30px auto;
-    padding: 25px;
-    border-radius: 6px;
-    max-width: 1000px;
-}
 
 /* ===== Headings ===== */
 h1 {
@@ -160,4 +212,68 @@ footer {
     width: 100%;
     padding: 8px;
     box-sizing: border-box;
+}
+
+
+/* ===== Top Header ===== */
+.topbar {
+    background: linear-gradient(90deg, #111827, #1f2937);
+    padding: 14px 0;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+}
+
+.topbar-container {
+    max-width: 1100px;
+    margin: auto;
+    padding: 0 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.brand {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.brand .logo {
+    font-size: 22px;
+}
+
+.brand .title {
+    font-size: 20px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    color: #f9fafb;
+}
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+}
+
+.nav-links a {
+    color: #e5e7eb;
+    font-weight: 500;
+    transition: color 0.2s;
+}
+
+.nav-links a:hover {
+    color: #38bdf8;
+}
+
+.logout-form button {
+    background-color: #ef4444;
+    border: none;
+    color: white;
+    padding: 6px 14px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-weight: 500;
+}
+
+.logout-form button:hover {
+    background-color: #dc2626;
 }

@@ -8,27 +8,53 @@
 
 <body>
 
-<header>
-    <h2>📦 Secure Inventory</h2>
+<header class="topbar">
+    <div class="topbar-container">
+        <div class="brand">
+            <span class="logo">🔐</span>
+            <span class="title">Secure Inventory System</span>
+        </div>
 
-    {% if user.is_authenticated %}
-    <nav>
-        <a href="/products/">Products</a>
-        <a href="/profile/">Profile</a>
-        {% if user.is_staff %}
-            <a href="/audit/">Audit Log</a>
+        {% if user.is_authenticated %}
+        <nav class="nav-links">
+            <a href="/products/">Products</a>
+            <a href="/profile/">Profile</a>
+            {% if user.is_staff %}
+                <a href="/audit/">Audit Log</a>
+            {% endif %}
+            <form method="post" action="/logout/" class="logout-form">
+                {% csrf_token %}
+                <button type="submit">Logout</button>
+            </form>
+        </nav>
         {% endif %}
-        <form method="post" action="/logout/">
-            {% csrf_token %}
-            <button type="submit">Logout</button>
-        </form>
-    </nav>
-    {% endif %}
+    </div>
 </header>
 
+
 <main>
+    {% if messages %}
+        <div id="messages-container">
+            {% for message in messages %}
+                <div class="alert {{ message.tags }}">
+                    {{ message }}
+                </div>
+            {% endfor %}
+        </div>
+    {% endif %}
+
     {% block content %}{% endblock %}
 </main>
+
+<script>
+    // Auto-hide messages after 3 seconds
+    setTimeout(() => {
+        const msg = document.getElementById("messages-container");
+        if (msg) {
+            msg.style.display = "none";
+        }
+    }, 3000);
+</script>
 
 <footer>
     Secure Software Development Project
